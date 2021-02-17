@@ -120,12 +120,12 @@ export default class App extends Component<Props, State> {
             <TouchableOpacity
               onPress={this.startCall}
               style={styles.button}>
-              <Text style={styles.buttonText}> Start Call </Text>
+              <Text style={styles.buttonText}> Start Call! </Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={this.endCall}
               style={styles.button}>
-              <Text style={styles.buttonText}> End Call </Text>
+              <Text style={styles.buttonText}> End Call! </Text>
             </TouchableOpacity>
           </View>
           {this._renderVideos()}
