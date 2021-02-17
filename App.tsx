@@ -138,8 +138,6 @@ export default class App extends Component<Props, State> {
     const {joinSucceed} = this.state
     return joinSucceed ? (
       <View style={styles.fullView}>
-        // Set the rendering mode of the video view as Hidden, 
-        // which uniformly scales the video until it fills the visible boundaries.
         <RtcLocalView.SurfaceView
           style={styles.max}
           channelId={this.state.channelName}
