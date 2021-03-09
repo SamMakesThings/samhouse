@@ -1,4 +1,4 @@
-export const clubTheme = {
+export const theme = {
   test: 'test',
   colors: {
     highlight: '#27ae60',
@@ -6,5 +6,10 @@ export const clubTheme = {
     mainBg: '#f2efe4',
     iconColor: '#000000',
     h1: '#333333',
+  },
+  text: {
+    h1: {
+      fontFamily: 'Nunito-Regular',
+    },
   },
 };
