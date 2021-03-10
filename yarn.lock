@@ -5514,6 +5514,11 @@ react-native-agora@^3.2.2:
   resolved "https://registry.yarnpkg.com/react-native-agora/-/react-native-agora-3.2.2.tgz#b93f9aa751f17c13e7cd5b4d0d0331702ee26399"
   integrity sha512-TOkrITd50AKt7+m6hwhsjlqUY5EMSJwvd86EO3dStnNFsgcqY6XxUE9JUCR2DdKw5UvTfuud5jBSv6fVJ3fvaA==
 
+react-native-size-matters@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/react-native-size-matters/-/react-native-size-matters-0.4.0.tgz#01bfd0d59454318f4e0b13fe9c1eb0523d70f2e0"
+  integrity sha512-8/C0htHrFWeUm9N8JegmadovUfgTWkGBkDPZ1N3YkXtDWb+98Ya2gThiKcu445r8c7YhcrBfnHz/mYsXIusaOQ==
+
 react-native@0.63.4:
   version "0.63.4"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.63.4.tgz#2210fdd404c94a5fa6b423c6de86f8e48810ec36"
