@@ -1,3 +1,5 @@
+import { scale } from 'react-native-size-matters'
+
 export const theme = {
   colors: {
     highlight: '#27ae60',
@@ -6,11 +8,16 @@ export const theme = {
     subBg: '#e7e3d5',
     cardBg: '#feffff',
     iconColor: '#000000',
-    h1: '#333333',
   },
   text: {
     h1: {
-      fontFamily: 'Nunito-Regular',
+      fontFamily: 'Nunito-Bold',
+      fontSize: scale(12),
+      color: '#333333'
     },
+    h2: {
+      fontFamily: 'Nunito-SemiBold',
+      color: '#333333'
+    }
   },
 };
