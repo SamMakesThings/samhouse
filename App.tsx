@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import {Platform, ScrollView, Text, TouchableOpacity, View, PermissionsAndroid} from 'react-native'
-// Import the RtcEngine class and view rendering components into your project.
+// Import the RtcEngine class and view rendering components, plus styles & keys
 import RtcEngine, {RtcLocalView, RtcRemoteView, VideoRenderMode} from 'react-native-agora'
-// Import the UI styles.
 import styles from './src/components/Style'
 import { agoraKeys } from './agora.config'
+import { RoomBrowser } from './src/screens/RoomBrowser'
 
 const requestCameraAndAudioPermission = async () =>{
   try {
@@ -114,7 +114,7 @@ export default class App extends Component<Props, State> {
 
   render() {
     return (
-      <View style={styles.max}>
+/*      <View style={styles.max}>
         <View style={styles.max}>
           <View style={styles.buttonHolder}>
             <TouchableOpacity
@@ -130,6 +130,10 @@ export default class App extends Component<Props, State> {
           </View>
           {this._renderVideos()}
         </View>
+      </View>
+    */
+      <View style={{flex: 1}}>
+        <RoomBrowser />
       </View>
     )
   }
