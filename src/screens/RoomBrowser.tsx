@@ -24,7 +24,7 @@ export const RoomBrowser = () => {
             </View>
             <View style={styles.View_NamesList}>
               <Text style={{...theme.text.h2, ...styles.Text_ListName}}>
-                Sam Stowers
+                Sam Stowers {'&amp;'}
               </Text>
               <Text style={{...theme.text.h2, ...styles.Text_ListName}}>
                 Mary Stowers
@@ -32,6 +32,11 @@ export const RoomBrowser = () => {
             </View>
           </View>
         </View>
+      </View>
+      <View style={styles.View_BottomMenu}>
+        <TouchableOpacity style={styles.Button_StartRoom}>
+          <Text style={{...theme.text.h1, ...styles.Text_CTA}}>Start a room</Text>
+        </TouchableOpacity>
       </View>
     </View>
   )
@@ -41,7 +46,7 @@ const styles = StyleSheet.create({
   View_ScreenBG: {
     flex: 1,
     backgroundColor: theme.colors.mainBg,
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
   },
   View_HeaderIcons: {
     flexDirection: 'row',
@@ -49,7 +54,8 @@ const styles = StyleSheet.create({
     height: scale(40)
   },
   View_CardScroller: {
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
+    flex: 1
   },
   CardProportions: {
     margin: scale(11),
@@ -84,5 +90,22 @@ const styles = StyleSheet.create({
   },
   Text_ListName: {
     fontSize: scale(14)
+  },
+  View_BottomMenu: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    margin: scale(15)
+  },
+  Button_StartRoom: {
+    flexDirection: 'row',
+    backgroundColor: theme.colors.highlight,
+    alignItems: 'center',
+    padding: scale(10),
+    paddingHorizontal: scale(20),
+    borderRadius: scale(50)
+  },
+  Text_CTA: {
+    color: '#ffffff',
+    fontSize: scale(18)
   }
 })
