@@ -2,29 +2,37 @@ import React from 'react'
 import {Platform, ScrollView, Text, TouchableOpacity, View, PermissionsAndroid, StyleSheet} from 'react-native'
 import { scale } from 'react-native-size-matters'
 import { theme } from '../constants/theme'
+import { ProfilePic } from '../components/ProfilePic'
 
 export const RoomBrowser = () => {
   return(
     <View style={styles.View_ScreenBG}>
       <View style={styles.View_HeaderIcons}>
-        <Text>Header icons here</Text>
+        <TouchableOpacity>
+          <ProfilePic size={scale(23)}/>
+        </TouchableOpacity>
       </View>
       <View style={styles.View_CardScroller}>
         <View style={{...styles.CardProportions, ...styles.View_ScheduleCard}}>
-          <View style={styles.View_ScheduledRoomContainer}>
-            <Text>3:00 PM</Text>
-            <Text>The name of a scheduled room</Text>
+          <View style={styles.View_RoomCardContentContainer}>
+            <View style={styles.View_ParticipantsPreview}>
+              <Text style={{...theme.text.h2, opacity: 0.7, fontSize: scale(11)}}>3:00 PM</Text>
+            </View>
+            <View style={styles.View_NamesList}>
+              <Text style={{...theme.text.h2, marginTop: scale(1)}}>The name of a scheduled room</Text>
+            </View>
           </View>
         </View>
         <View style={{...styles.CardProportions, ...styles.View_RoomCard}}>
           <Text style={theme.text.h1}>Room title here, something something Clubhouse</Text>
           <View style={styles.View_RoomCardContentContainer}>
             <View style={styles.View_ParticipantsPreview}>
-              <Text>Profiles preview</Text>
+              <ProfilePic size={scale(30)} style={{marginLeft: scale(-5), zIndex: 10}}/>
+              <ProfilePic size={scale(30)} style={{marginTop: scale(-17), marginLeft: scale(15)}}/>
             </View>
             <View style={styles.View_NamesList}>
               <Text style={{...theme.text.h2, ...styles.Text_ListName}}>
-                Sam Stowers {'&amp;'}
+                Sam Stowers
               </Text>
               <Text style={{...theme.text.h2, ...styles.Text_ListName}}>
                 Mary Stowers
@@ -51,14 +59,16 @@ const styles = StyleSheet.create({
   View_HeaderIcons: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    height: scale(40)
+    padding: scale(15),
+    paddingTop: scale(22)
   },
   View_CardScroller: {
     justifyContent: 'flex-start',
     flex: 1
   },
   CardProportions: {
-    margin: scale(11),
+    marginHorizontal: scale(11),
+    marginVertical: scale(7),
     padding: scale(15),
     borderRadius: scale(13)
   },
