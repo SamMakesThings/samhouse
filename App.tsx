@@ -1,4 +1,6 @@
+import 'react-native-gesture-handler'
 import React, {Component} from 'react'
+import { NavigationContainer } from '@react-navigation/native'
 import {Platform, ScrollView, Text, TouchableOpacity, View, PermissionsAndroid} from 'react-native'
 // Import the RtcEngine class and view rendering components, plus styles & keys
 import RtcEngine, {RtcLocalView, RtcRemoteView, VideoRenderMode} from 'react-native-agora'
@@ -132,9 +134,11 @@ export default class App extends Component<Props, State> {
         </View>
       </View>
     */
-      <View style={{flex: 1}}>
-        <RoomBrowser />
-      </View>
+      <NavigationContainer>
+        <View style={{flex: 1}}>
+          <RoomBrowser />
+        </View>
+      </NavigationContainer>
     )
   }
 
