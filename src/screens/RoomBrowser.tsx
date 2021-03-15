@@ -1,12 +1,25 @@
-import React from 'react'
-import {Platform, ScrollView, Text, TouchableOpacity, View, PermissionsAndroid, StyleSheet} from 'react-native'
+import React, { useState } from 'react'
+import {Text, TouchableOpacity, View, StyleSheet, Modal, Alert} from 'react-native'
 import { scale } from 'react-native-size-matters'
 import { theme } from '../constants/theme'
 import { ProfilePic } from '../components/ProfilePic'
+import { RoomScreen } from './RoomScreen'
 
 export const RoomBrowser = () => {
+  const [modalVisible, setModalVisible] = useState(false);
+
   return(
     <View style={styles.View_ScreenBG}>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <RoomScreen />
+      </Modal>
       <View style={styles.View_HeaderIcons}>
         <TouchableOpacity>
           <ProfilePic size={scale(23)}/>
@@ -42,7 +55,7 @@ export const RoomBrowser = () => {
         </View>
       </View>
       <View style={styles.View_BottomMenu}>
-        <TouchableOpacity style={styles.Button_StartRoom}>
+        <TouchableOpacity style={styles.Button_StartRoom} onPress={() => setModalVisible(!modalVisible)}>
           <Text style={{...theme.text.h1, ...styles.Text_CTA}}>Start a room</Text>
         </TouchableOpacity>
       </View>
