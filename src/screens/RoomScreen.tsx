@@ -8,45 +8,7 @@ import { ProfilePic } from '../components/ProfilePic'
 export const RoomScreen = () => {
   return (
     <View>
-      <View style={styles.View_HeaderIcons}>
-        <TouchableOpacity>
-          <ProfilePic size={scale(23)}/>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.View_CardScroller}>
-        <View style={{...styles.CardProportions, ...styles.View_ScheduleCard}}>
-          <View style={styles.View_RoomCardContentContainer}>
-            <View style={styles.View_ParticipantsPreview}>
-              <Text style={{...theme.text.h2, opacity: 0.7, fontSize: scale(11)}}>3:00 PM</Text>
-            </View>
-            <View style={styles.View_NamesList}>
-              <Text style={{...theme.text.h2, marginTop: scale(1)}}>The name of a scheduled room</Text>
-            </View>
-          </View>
-        </View>
-        <View style={{...styles.CardProportions, ...styles.View_RoomCard}}>
-          <Text style={theme.text.h1}>Room title here, something something Clubhouse</Text>
-          <View style={styles.View_RoomCardContentContainer}>
-            <View style={styles.View_ParticipantsPreview}>
-              <ProfilePic size={scale(30)} style={{marginLeft: scale(-5), zIndex: 10}}/>
-              <ProfilePic size={scale(30)} style={{marginTop: scale(-17), marginLeft: scale(15)}}/>
-            </View>
-            <View style={styles.View_NamesList}>
-              <Text style={{...theme.text.h2, ...styles.Text_ListName}}>
-                Sam Stowers
-              </Text>
-              <Text style={{...theme.text.h2, ...styles.Text_ListName}}>
-                Mary Stowers
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-      <View style={styles.View_BottomMenu}>
-        <TouchableOpacity style={styles.Button_StartRoom}>
-          <Text style={{...theme.text.h1, ...styles.Text_CTA}}>Start a room</Text>
-        </TouchableOpacity>
-      </View>
+      <Text>Test shit</Text>
     </View>
   )
 }
