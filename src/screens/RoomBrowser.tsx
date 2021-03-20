@@ -12,7 +12,7 @@ export const RoomBrowser = () => {
     <View style={styles.View_ScreenBG}>
       <View style={styles.View_HeaderIcons}>
         <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
-          <Text>Open or close room viewer</Text>
+          <Text style={theme.text.h1}>[ICON] All Sam rooms</Text>
         </TouchableOpacity>
         <TouchableOpacity>
           <ProfilePic size={scale(23)}/>
@@ -62,6 +62,13 @@ export const RoomBrowser = () => {
           <RoomScreen />
         </View>
       )}
+      { modalVisible && (
+        <View style={styles.View_InCallBottomMenuContainer}>
+        <View style={styles.View_InCallBottomMenu}>
+          <Text>Leave loudly</Text>
+        </View>
+        </View>
+      )}
     </View>
   )
 }
@@ -74,7 +81,7 @@ const styles = StyleSheet.create({
   },
   View_HeaderIcons: {
     flexDirection: 'row',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
     padding: scale(15),
     paddingTop: scale(22)
   },
@@ -143,5 +150,16 @@ const styles = StyleSheet.create({
     borderRadius: scale(30),
     elevation: scale(2),
     padding: scale(19)
+  },
+  View_InCallBottomMenuContainer: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+  },
+  View_InCallBottomMenu: {
+    backgroundColor: 'yellow',
+    position: 'absolute',
+    elevation: scale(3),
+    width: '100%',
   }
 })
