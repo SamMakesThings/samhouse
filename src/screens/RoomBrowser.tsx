@@ -56,12 +56,7 @@ export const RoomBrowser = () => {
         <View
           style={{ // display 'none' isn't working when combined with absolute position, will need to use a workaround.
             display: modalVisible ? 'flex' : 'none',
-            position: 'absolute',
-            height: '90%',
-            width: '100%',
-            marginTop: '20%',
-            backgroundColor: 'white',
-            borderRadius: 50
+            ...styles.View_RoomScreen
           }}
         >
           <RoomScreen />
@@ -138,5 +133,15 @@ const styles = StyleSheet.create({
   Text_CTA: {
     color: '#ffffff',
     fontSize: scale(18)
+  },
+  View_RoomScreen: {
+    position: 'absolute',
+    height: '90%',
+    width: '100%',
+    marginTop: '18%',
+    backgroundColor: 'white',
+    borderRadius: scale(30),
+    elevation: scale(2),
+    padding: scale(19)
   }
 })
