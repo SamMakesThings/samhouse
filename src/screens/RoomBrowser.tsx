@@ -10,17 +10,10 @@ export const RoomBrowser = () => {
 
   return(
     <View style={styles.View_ScreenBG}>
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(!modalVisible);
-        }}
-      >
-        <RoomScreen />
-      </Modal>
       <View style={styles.View_HeaderIcons}>
+        <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+          <Text>Open or close room viewer</Text>
+        </TouchableOpacity>
         <TouchableOpacity>
           <ProfilePic size={scale(23)}/>
         </TouchableOpacity>
@@ -59,6 +52,21 @@ export const RoomBrowser = () => {
           <Text style={{...theme.text.h1, ...styles.Text_CTA}}>Start a room</Text>
         </TouchableOpacity>
       </View>
+      { modalVisible && (
+        <View
+          style={{ // display 'none' isn't working when combined with absolute position, will need to use a workaround.
+            display: modalVisible ? 'flex' : 'none',
+            position: 'absolute',
+            height: '90%',
+            width: '100%',
+            marginTop: '20%',
+            backgroundColor: 'white',
+            borderRadius: 50
+          }}
+        >
+          <RoomScreen />
+        </View>
+      )}
     </View>
   )
 }
