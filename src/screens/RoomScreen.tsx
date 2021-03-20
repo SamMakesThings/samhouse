@@ -9,6 +9,9 @@ export const RoomScreen = () => {
   return (
     <View>
       <Text style={{...theme.text.h1, ...styles.Text_RoomTitle}}>Room title here, something something Clubhouse</Text>
+      <View style={styles.View_People}>
+
+      </View>
     </View>
   )
 }
@@ -16,5 +19,8 @@ export const RoomScreen = () => {
 const styles = StyleSheet.create({
   Text_RoomTitle: {
     fontSize: scale(15)
-  }
+  },
+  View_People: {
+
+  },
 })
