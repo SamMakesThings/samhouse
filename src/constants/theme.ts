@@ -8,6 +8,7 @@ export const theme = {
     subBg: '#e7e3d5',
     cardBg: '#feffff',
     iconColor: '#000000',
+    buttonColor: '#f2f2f2'
   },
   text: {
     h1: {

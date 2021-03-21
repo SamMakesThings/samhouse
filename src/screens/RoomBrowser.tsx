@@ -64,9 +64,12 @@ export const RoomBrowser = () => {
       )}
       { modalVisible && (
         <View style={styles.View_InCallBottomMenuContainer}>
-        <View style={styles.View_InCallBottomMenu}>
-          <Text>Leave loudly</Text>
-        </View>
+          <View style={styles.View_InCallBottomMenu}>
+            <TouchableOpacity style={styles.Touchable_GreyButton}><Text style={{...theme.text.h1, color: theme.colors.warning}}>{'\u270C'} Leave loudly</Text></TouchableOpacity>
+            <View>
+              <TouchableOpacity style={styles.Touchable_GreyButton}><Text>plus icon</Text></TouchableOpacity>
+            </View>
+          </View>
         </View>
       )}
     </View>
@@ -146,7 +149,7 @@ const styles = StyleSheet.create({
     height: '90%',
     width: '100%',
     marginTop: '18%',
-    backgroundColor: 'white',
+    backgroundColor: theme.colors.cardBg,
     borderRadius: scale(30),
     elevation: scale(2),
     padding: scale(19)
@@ -154,12 +157,23 @@ const styles = StyleSheet.create({
   View_InCallBottomMenuContainer: {
     width: '100%',
     height: '100%',
-    justifyContent: 'center',
+    position: 'absolute',
+    justifyContent: 'flex-end',
   },
   View_InCallBottomMenu: {
-    backgroundColor: 'yellow',
+    backgroundColor: theme.colors.cardBg,
     position: 'absolute',
-    elevation: scale(3),
+    elevation: scale(2.0001),
     width: '100%',
-  }
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: scale(15),
+    paddingBottom: scale(30)
+  },
+  Touchable_GreyButton: {
+    backgroundColor: theme.colors.buttonColor,
+    paddingVertical: scale(9),
+    paddingHorizontal: scale(14),
+    borderRadius: 50,
+  },
 })
