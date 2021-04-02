@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import {Text, TouchableOpacity, View, StyleSheet, Modal, Alert} from 'react-native'
 import { scale } from 'react-native-size-matters'
 import { theme } from '../constants/theme'
+import DownChevronSVG from '../assets/img/down-chevron.svg'
 import { ProfilePic } from '../components/ProfilePic'
 import { RoomScreen } from './RoomScreen'
 
@@ -11,8 +12,9 @@ export const RoomBrowser = () => {
   return(
     <View style={styles.View_ScreenBG}>
       <View style={styles.View_HeaderIcons}>
-        <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
-          <Text style={theme.text.h1}>[ICON] All Sam rooms</Text>
+        <TouchableOpacity onPress={() => setModalVisible(!modalVisible)} style={styles.Touchable_HideRoom}>
+          <DownChevronSVG width={scale(16)} height={scale(16)} />
+          <Text style={{...theme.text.h1, marginLeft: scale(6), marginBottom: scale(2)}}>All Sam rooms</Text>
         </TouchableOpacity>
         <TouchableOpacity>
           <ProfilePic size={scale(23)}/>
@@ -176,4 +178,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: scale(14),
     borderRadius: 50,
   },
+  Touchable_HideRoom: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  }
 })
