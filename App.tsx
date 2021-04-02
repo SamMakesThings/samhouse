@@ -8,6 +8,8 @@ import styles from './src/components/Style'
 import { agoraKeys } from './agora.config'
 import { RoomBrowser } from './src/screens/RoomBrowser'
 
+// TODO: Include "Some icons made by Google from Flaticon" somewhere visible in app
+
 const requestCameraAndAudioPermission = async () =>{
   try {
     const granted = await PermissionsAndroid.requestMultiple([
