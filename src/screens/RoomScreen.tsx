@@ -1,8 +1,7 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import { scale } from 'react-native-size-matters'
 import { theme } from '../constants/theme'
-import { ProfilePic } from '../components/ProfilePic'
 import { ProfileThumbnail } from '../components/ProfileThumbnail'
 
 // This component will go inside a Modal component in RoomBrowser.tsx
