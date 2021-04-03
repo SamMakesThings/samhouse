@@ -3,12 +3,13 @@ import {Text, TouchableOpacity, View, StyleSheet, Modal, Alert} from 'react-nati
 import { scale } from 'react-native-size-matters'
 import { theme } from '../constants/theme'
 import DownChevronSVG from '../assets/img/down-chevron.svg'
-import MuteIcon from '../assets/img/CHMute.svg'
 import { ProfilePic } from '../components/ProfilePic'
 import { RoomScreen } from './RoomScreen'
+import { MicToggleButton } from '../components/MicToggleButton'
 
 export const RoomBrowser = () => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [muted, setMuted] = useState(true);
 
   return(
     <View style={styles.View_ScreenBG}>
@@ -68,9 +69,11 @@ export const RoomBrowser = () => {
       { modalVisible && (
         <View style={styles.View_InCallBottomMenuContainer}>
           <View style={styles.View_InCallBottomMenu}>
-            <TouchableOpacity style={styles.Touchable_GreyButton}><Text style={{...theme.text.h1, color: theme.colors.warning}}>{'\u270C'} Leave loudly</Text></TouchableOpacity>
+            <TouchableOpacity style={styles.Touchable_GreyButton} onPress={() => setModalVisible(!modalVisible)}>
+              <Text style={{...theme.text.h1, color: theme.colors.warning}}>{'\u270C'} Leave loudly</Text>
+            </TouchableOpacity>
             <View style={styles.View_InCallBottomMenuRight}>
-              <TouchableOpacity style={{...styles.Touchable_GreyButton, ...styles.Touchable_IconButton}}><MuteIcon width={scale(20)} height={scale(20)} /></TouchableOpacity>
+              <MicToggleButton muted={muted} onPress={() => setMuted(!muted)}/>
               <TouchableOpacity style={styles.Touchable_GreyButton}><Text>plus icon</Text></TouchableOpacity>
             </View>
           </View>
