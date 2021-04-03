@@ -3,6 +3,7 @@ import {Text, TouchableOpacity, View, StyleSheet, Modal, Alert} from 'react-nati
 import { scale } from 'react-native-size-matters'
 import { theme } from '../constants/theme'
 import DownChevronSVG from '../assets/img/down-chevron.svg'
+import MuteIcon from '../assets/img/CHMute.svg'
 import { ProfilePic } from '../components/ProfilePic'
 import { RoomScreen } from './RoomScreen'
 
@@ -68,7 +69,8 @@ export const RoomBrowser = () => {
         <View style={styles.View_InCallBottomMenuContainer}>
           <View style={styles.View_InCallBottomMenu}>
             <TouchableOpacity style={styles.Touchable_GreyButton}><Text style={{...theme.text.h1, color: theme.colors.warning}}>{'\u270C'} Leave loudly</Text></TouchableOpacity>
-            <View>
+            <View style={styles.View_InCallBottomMenuRight}>
+              <TouchableOpacity style={{...styles.Touchable_GreyButton, ...styles.Touchable_IconButton}}><MuteIcon width={scale(20)} height={scale(20)} /></TouchableOpacity>
               <TouchableOpacity style={styles.Touchable_GreyButton}><Text>plus icon</Text></TouchableOpacity>
             </View>
           </View>
@@ -174,12 +176,20 @@ const styles = StyleSheet.create({
   },
   Touchable_GreyButton: {
     backgroundColor: theme.colors.buttonColor,
-    paddingVertical: scale(9),
+    paddingTop: scale(7),
+    paddingBottom: scale(6),
     paddingHorizontal: scale(14),
     borderRadius: 50,
   },
   Touchable_HideRoom: {
     flexDirection: 'row',
     alignItems: 'center',
-  }
+  },
+  View_InCallBottomMenuRight: {
+    flexDirection: 'row',
+  },
+  Touchable_IconButton: {
+    paddingHorizontal: scale(7),
+    marginRight: scale(13)
+  },
 })
